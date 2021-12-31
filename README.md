@@ -38,6 +38,10 @@ Users should be able to:
 
 - [React](https://reactjs.org/) - JS library
 - [Chakra UI](https://chakra-ui.com/) - React Component library
+- CSS Before pseudo element with CSS hover pseudo class
+- CSS Partial border with content property and transition animation
+- CSS Grid & Order Elements
+- TextShadows
 
 ## Author
 

@@ -22,8 +22,9 @@ export default extendTheme({
     },
   },
   fonts: {
-    body: "Josefin Sans",
-    heading: "Alata",
+    body: "'Josefin Sans', sans-serif",
+    heading: "Josefin Sans",
+    /* heading: "Alata", */
   },
   components: {
     Link: {
@@ -54,35 +55,32 @@ export default extendTheme({
         },
       },
       variants: {
-        ghost: ({colorScheme = "secondary"}) => ({
-          backgroundColor: `${colorScheme}.50`,
-          ":hover, :focus": {
-            backgroundColor: `${colorScheme}.100`,
+        outline: {
+          px: 12,
+          pt: 4,
+          pb: 2,
+          textTransform: "uppercase",
+          borderColor: "black",
+          borderRadius: "sm",
+          letterSpacing: "2px",
+          _hover: {
+            color: "white",
+            bg: "black",
           },
-        }),
+        },
+        "footer-link": {
+          fontFamily: "Alata",
+          h: 8,
+          color: "white",
+          borderRadius: 0,
+          paddingInlineStart: ["inherit", 0],
+          paddingInlineEnd: ["inherit", 0],
+        },
       },
     },
-    Input: {
-      parts: ["field"],
-      defaultProps: {
-        focusBorderColor: "secondary.500",
-      },
-      variants: {
-        filled: {
-          field: {
-            borderRadius: "sm",
-            color: "blackAlpha.800",
-            backgroundColor: "white",
-            ":hover, :focus": {
-              backgroundColor: "white",
-            },
-          },
-        },
-        outline: {
-          field: {
-            borderColor: "gray.300",
-          },
-        },
+    Heading: {
+      baseStyle: {
+        textTransform: "uppercase",
       },
     },
   },

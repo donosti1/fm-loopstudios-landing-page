@@ -1,33 +1,44 @@
 import React from "react";
-import {Button, Container, Icon, Image, Stack, Text} from "@chakra-ui/react";
+import {Button, Container, Grid, Icon, Image, Stack, Text} from "@chakra-ui/react";
 import {FaFacebookSquare, FaInstagram, FaPinterest, FaTwitter} from "react-icons/fa";
 
-interface menuComponents {
-  menuLabel: string;
-  menuItems: {id: number; label: string}[];
-}
 const menuItems = ["About", "Careers", "Events", "Products", "Support"];
-const companyMenuItems = [
-  {id: 0, label: "Contact Us"},
-  {id: 1, label: "Terms"},
-  {id: 2, label: "Privacy"},
-];
 
-const CustomMenuItem = (props: menuComponents) => {
-  const productMenuList = props.menuItems.map((mi) => (
-    <Button key={mi.id} fontSize="sm" variant="footer-link">
-      {mi.label}
+const CustomMenuItem = () => {
+  const productMenuList = menuItems.map((mi) => (
+    <Button
+      key={mi}
+      fontSize="sm"
+      sx={{
+        ":hover::before": {
+          content: "''",
+          display: "block",
+          position: "absolute",
+          bottom: "0",
+          width: "50%",
+          left: "25%",
+          borderBottom: "2px solid white",
+        },
+        "::before": {
+          content: "''",
+          display: "block",
+          position: "absolute",
+          bottom: "0",
+          width: "0%",
+          left: "50%",
+          borderBottom: "2px solid white",
+          transition: "all .2s cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+        },
+      }}
+      variant="footer-link"
+    >
+      {mi}
     </Button>
   ));
 
   return (
-    <Stack alignItems={["center", "flex-start"]} spacing={[0, 4]} width={24}>
-      <Button display={["none", "inline-flex"]} fontSize="sm" variant="footer-link">
-        {props.menuLabel}
-      </Button>
-      <Stack alignItems={["flex-start", "flex-start"]} spacing={0}>
-        {productMenuList}
-      </Stack>
+    <Stack direction={["column", "row"]} spacing={[2, 8]}>
+      {productMenuList}
     </Stack>
   );
 };
@@ -56,7 +67,11 @@ const SocialNetworks = () => {
     />
   ));
 
-  return <Stack direction="row">{icons}</Stack>;
+  return (
+    <Stack direction="row" justifyContent={["center", "flex-end"]} order={[1, 0]}>
+      {icons}
+    </Stack>
+  );
 };
 
 const Footer = () => {
@@ -69,14 +84,21 @@ const Footer = () => {
       role="contentinfo"
     >
       <Container maxWidth="container.xl">
-        <Stack direction="row" justifyContent="space-between" paddingBottom={8}>
-          <Image alt="logo" height={[20, 8]} src="/logo.svg" width={[40, 32]} />
+        <Grid rowGap={[4, 8]} templateColumns={["repeat(1,1fr)", "repeat(2,1fr)"]} width="100%">
+          <Stack alignItems={["center", "flex-start"]}>
+            <Image alt="logo" height={[12, 8]} src="/logo.svg" width={[48, 32]} />
+          </Stack>
           <SocialNetworks />
-        </Stack>
-        <Stack direction="row" justifyContent="space-between">
-          <Text color="white" />
-          <Text color="primary.700">© 2021 Loopstudios. All rights reserved.</Text>
-        </Stack>
+          <CustomMenuItem />
+          <Text
+            color="primary.500"
+            fontFamily="Alata"
+            order={[1, 0]}
+            textAlign={["center", "right"]}
+          >
+            © 2021 Loopstudios. All rights reserved.
+          </Text>
+        </Grid>
       </Container>
     </Stack>
   );
