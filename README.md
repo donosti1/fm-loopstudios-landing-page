@@ -40,7 +40,7 @@ Users should be able to:
 - [Chakra UI](https://chakra-ui.com/) - React Component library
 - CSS Before pseudo element with CSS hover pseudo class
 - CSS Partial border with content property and transition animation
-- CSS Grid & Order Elements
+- CSS Grid, Column spanning & Order Elements
 - TextShadows
 
 ## Author
