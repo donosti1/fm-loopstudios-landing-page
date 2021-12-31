@@ -5,18 +5,12 @@ import Routes from "./routes";
 import Footer from "./screens/Footer";
 import Creations from "./screens/Creations";
 import Main from "./screens/Main";
-/* About Careers Events Products Support Immersive experiences that deliver   */
+import Hero from "./screens/Hero";
+/*     */
 const App: React.FC = () => {
   return (
     <>
-      <Container alignSelf="center" maxWidth="container.xl" paddingX={0}>
-        <Stack>
-          <Box>{`< Navbar />`}</Box>
-          <Box>
-            <Routes />
-          </Box>
-        </Stack>
-      </Container>
+      <Hero />
       <Main />
       <Creations />
       <Footer />

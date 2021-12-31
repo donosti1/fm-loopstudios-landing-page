@@ -21,8 +21,8 @@ const galleryItems = [
 
 const GalleryItem = (props: IGalItems) => {
   const [isHover, setIsHover] = React.useState<boolean>(false);
-  const mobileImgSrc = `url(/mobile/image-${props.img}.jpg)`;
-  const desktopImgSrc = `url(/desktop/image-${props.img}.jpg)`;
+  const mobileImgSrc = `url(/assets/mobile/image-${props.img}.jpg)`;
+  const desktopImgSrc = `url(/assets/desktop/image-${props.img}.jpg)`;
 
   return (
     <Stack
@@ -80,42 +80,40 @@ const Gallery = () => {
 
 const Creations: React.FC = () => {
   return (
-    <Stack
-      alignItems={["center", "flex-start"]}
-      paddingBottom={[16, 16]}
-      paddingTop={[16, 8]}
-      role="contentinfo"
-    >
-      <Container maxWidth="container.xl">
-        <Stack direction={["column", "row"]} spacing={0} wrap="wrap">
-          <Heading
-            as="h2"
-            fontSize={["2xl", "5xl"]}
-            fontWeight="300"
-            textAlign={["center", "left"]}
-            width={["100%", "50%"]}
-          >
-            Our creations
-          </Heading>
+    <>
+      <Stack alignItems={["center", "flex-start"]} role="contentinfo">
+        <Container maxWidth="container.xl">
+          <Stack direction={["column", "row"]} spacing={0} wrap="wrap">
+            <Heading
+              as="h2"
+              fontSize={["2xl", "5xl"]}
+              fontWeight="300"
+              textAlign={["center", "left"]}
+              width={["100%", "50%"]}
+            >
+              Our creations
+            </Heading>
 
-          <Stack
-            alignItems={["center", "flex-end"]}
-            justifyContent="center"
-            order={[1, 0]}
-            paddingTop={[6, 0]}
-            width={["100%", "50%"]}
-          >
-            <Button justifyContent="center" variant="outline">
-              See all
-            </Button>
-          </Stack>
+            <Stack
+              alignItems={["center", "flex-end"]}
+              justifyContent="center"
+              order={[1, 0]}
+              paddingTop={[6, 0]}
+              width={["100%", "50%"]}
+            >
+              <Button justifyContent="center" variant="outline">
+                See all
+              </Button>
+            </Stack>
 
-          <Stack paddingTop={[6, 16]} width="100%">
-            <Gallery />
+            <Stack paddingTop={[6, 16]} width="100%">
+              <Gallery />
+            </Stack>
           </Stack>
-        </Stack>
-      </Container>
-    </Stack>
+        </Container>
+      </Stack>
+      <Stack h={[16, 32]} />
+    </>
   );
 };
 

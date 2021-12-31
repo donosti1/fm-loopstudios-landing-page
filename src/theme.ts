@@ -6,6 +6,9 @@ export default extendTheme({
       body: {
         color: "blackAlpha.900",
       },
+      h1: {
+        color: "white",
+      },
     },
   },
   colors: {
@@ -33,13 +36,6 @@ export default extendTheme({
           color: `${colorScheme}.700`,
           _hover: {
             color: `${colorScheme}.800`,
-            textDecoration: "none",
-          },
-        }),
-        color: ({colorScheme = "secondary"}) => ({
-          color: `${colorScheme}.500`,
-          _hover: {
-            color: `${colorScheme}.600`,
             textDecoration: "none",
           },
         }),
@@ -75,6 +71,9 @@ export default extendTheme({
           borderRadius: 0,
           paddingInlineStart: ["inherit", 0],
           paddingInlineEnd: ["inherit", 0],
+        },
+        "header-link": {
+          color: "white",
         },
       },
     },

@@ -50,21 +50,40 @@ const SocialNetworks = () => {
     {id: 3, icon: FaInstagram},
   ];
   const icons = item.map((it) => (
-    <Icon
+    <Button
       key={it.id}
-      _hover={{
-        cursor: "pointer",
-        borderColor: "white",
-        borderBottomWidth: 2,
+      sx={{
+        ":hover::before": {
+          content: "''",
+          display: "block",
+          position: "absolute",
+          bottom: "0",
+          width: "80%",
+          left: "10%",
+          borderBottom: "2px solid white",
+        },
+        "::before": {
+          content: "''",
+          display: "block",
+          position: "absolute",
+          bottom: "0",
+          width: "0%",
+          left: "50%",
+          borderBottom: "2px solid white",
+          transition: "all .25s cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+        },
       }}
-      as={it.icon}
-      borderBottomWidth={2}
-      borderColor="black"
-      color="white"
-      height={8}
-      paddingBottom={2}
-      width={8}
-    />
+      variant="unstyled"
+    >
+      <Icon
+        as={it.icon}
+        borderBottomWidth={2}
+        borderColor="black"
+        color="white"
+        height={8}
+        width={8}
+      />
+    </Button>
   ));
 
   return (
@@ -86,7 +105,7 @@ const Footer = () => {
       <Container maxWidth="container.xl">
         <Grid rowGap={[4, 8]} templateColumns={["repeat(1,1fr)", "repeat(2,1fr)"]} width="100%">
           <Stack alignItems={["center", "flex-start"]}>
-            <Image alt="logo" height={[12, 8]} src="/logo.svg" width={[48, 32]} />
+            <Image alt="logo" height={[12, 8]} src="/assets/logo.svg" width={[48, 32]} />
           </Stack>
           <SocialNetworks />
           <CustomMenuItem />
