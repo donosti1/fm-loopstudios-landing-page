@@ -105,7 +105,7 @@ const Footer = () => {
       <Container maxWidth="container.xl">
         <Grid rowGap={[4, 8]} templateColumns={["repeat(1,1fr)", "repeat(2,1fr)"]} width="100%">
           <Stack alignItems={["center", "flex-start"]}>
-            <Image alt="logo" height={[12, 8]} src="/assets/logo.svg" width={[48, 32]} />
+            <Image alt="logo" height={[6, 8]} src="/assets/logo.svg" width={[32, 40]} />
           </Stack>
           <SocialNetworks />
           <CustomMenuItem />

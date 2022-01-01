@@ -75,6 +75,13 @@ export default extendTheme({
         "header-link": {
           color: "white",
         },
+        "mobile-menu-link": {
+          color: "white",
+          textTransform: "uppercase",
+          h: 12,
+          fontSize: "2xl",
+          fontWeight: "300",
+        },
       },
     },
     Heading: {

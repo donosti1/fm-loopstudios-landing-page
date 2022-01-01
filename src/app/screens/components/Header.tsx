@@ -13,6 +13,7 @@ import {
   Link,
   Stack,
   useDisclosure,
+  DrawerCloseButton,
 } from "@chakra-ui/react";
 import {AiOutlineClose, AiOutlineMenu} from "react-icons/ai";
 
@@ -76,7 +77,8 @@ const Header = () => {
       <Container
         backgroundColor={scrollPosition > 64 ? "black" : "transparent"}
         maxWidth={["container.sm", "container.xl"]}
-        paddingTop={[scrollPosition > 64 ? 0 : 6, 0]}
+        paddingBottom={[scrollPosition > 64 ? 2 : 0, 0]}
+        paddingTop={[scrollPosition > 64 ? 2 : 6, 0]}
         position={["fixed", "relative"]}
         zIndex="100"
       >
@@ -89,7 +91,7 @@ const Header = () => {
           role="navigation"
         >
           <Link>
-            <Image alt="logo" height={[10, 8]} src="/assets/logo.svg" width={[40, 32]} />
+            <Image alt="logo" height={[6, 8]} src="/assets/logo.svg" width={[32, 40]} />
           </Link>
           <Stack direction="row" display={["none", "flex"]} spacing={[2, 2]}>
             {menu}
@@ -101,7 +103,7 @@ const Header = () => {
             zIndex="1000"
             onClick={isOpen ? onClose : onOpen}
           >
-            <Icon as={isOpen ? AiOutlineClose : AiOutlineMenu} color="white" h={6} w={6} />
+            <Icon as={AiOutlineMenu} color="white" h={6} w={6} />
           </Button>
           <Drawer
             finalFocusRef={btnRef}
@@ -110,20 +112,52 @@ const Header = () => {
             size="full"
             onClose={onClose}
           >
-            {/*             <DrawerContent>
-              <DrawerBody>
-                <Stack flex="1">
-                  {menuItems.map((mi) => (
-                    <Button key={mi.id} variant="mobile-menu-link">
-                      {mi.label}
-                    </Button>
-                  ))}
-                  <Button h={12} variant="outline-darkBg" width="100%" zIndex="1">
-                    View plans
-                  </Button>
-                </Stack>
+            <DrawerOverlay />
+            <DrawerContent bgColor="black">
+              <DrawerBody px={0} py={0}>
+                <Container
+                  height="100%"
+                  maxWidth="container.sm"
+                  paddingBottom={scrollPosition > 64 ? 2 : 0}
+                  paddingTop={scrollPosition > 64 ? 2 : 6}
+                >
+                  <Stack alignItems="flex-start" height="100%" justifyContent="space-between">
+                    <Stack
+                      alignItems="center"
+                      direction="row"
+                      justifyContent="space-between"
+                      width="100%"
+                    >
+                      <Link>
+                        <Image alt="logo" height={[6, 8]} src="/assets/logo.svg" width={[32, 40]} />
+                      </Link>
+                      <Button
+                        ref={btnRef}
+                        display={["flex", "none"]}
+                        variant="header-menu-button"
+                        zIndex="1000"
+                        onClick={isOpen ? onClose : onOpen}
+                      >
+                        <Icon as={AiOutlineClose} color="white" h={6} w={6} />
+                      </Button>
+                    </Stack>
+                    <Stack
+                      alignItems="flex-start"
+                      flex={1}
+                      justifyContent="center"
+                      spacing={0}
+                      width="100%"
+                    >
+                      {menuItems.map((mi) => (
+                        <Button key={mi.id} variant="mobile-menu-link">
+                          {mi.label}
+                        </Button>
+                      ))}
+                    </Stack>
+                  </Stack>
+                </Container>
               </DrawerBody>
-            </DrawerContent> */}
+            </DrawerContent>
           </Drawer>
         </Stack>
       </Container>
