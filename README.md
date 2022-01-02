@@ -6,8 +6,8 @@ This is a solution to the [Loopstudios landing page challenge on Frontend Mentor
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-<!--   - [Screenshot](#screenshot)
-  - [Links](#links) -->
+  - [Screenshot](#screenshot)
+  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 - [Author](#author)
@@ -23,14 +23,14 @@ Users should be able to:
 - View the optimal layout for the site depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-<!-- ### Screenshot
+### Screenshot
 
 ![](./screenshot.jpg)
 
 ### Links
 
 - Solution URL: [https://github.com/donosti1/fm-loopstudios-landing-page](https://github.com/donosti1/fm-loopstudios-landing-page)
-- Live Site URL: [https://fm-loopstudios-landing-page-donosti1.vercel.app/](https://fm-loopstudios-landing-page-donosti1.vercel.app/) -->
+- Live Site URL: [https://fm-loopstudios-landing-page-donosti1.vercel.app/](https://fm-loopstudios-landing-page-donosti1.vercel.app/)
 
 ## My process
 
@@ -42,6 +42,7 @@ Users should be able to:
 - CSS Partial border with content property and transition animation
 - CSS Grid, Column spanning & Order Elements
 - TextShadows
+- Mobile menu with Chakra UI Drawer
 
 ## Author
 
